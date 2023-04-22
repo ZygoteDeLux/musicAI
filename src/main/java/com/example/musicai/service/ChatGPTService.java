@@ -19,7 +19,7 @@ public class ChatGPTService {
 
     public String getMusicRecommendation(String userInput) {
 
-        String prompt = "As an AI language model, i one sentence please provide 3 " + userInput +  "music artists I should listen to:";
+        String prompt = "List 3 " + userInput +  "music artists or bands:";
 
         Map<String, Object> requestBody = new HashMap<>();
         requestBody.put("prompt", prompt);
