@@ -12,7 +12,7 @@ import java.util.Map;
 @Service
 public class ChatGPTService {
 
-    private static final String CHATGPT_URL = "https://api.openai.com/v1/engines/davinci/completions";
+    private static final String CHATGPT_URL = "https://api.openai.com/v1/completions";
 
     @Autowired
     private RestTemplate restTemplate;
@@ -22,6 +22,7 @@ public class ChatGPTService {
         String prompt = "List 3 " + userInput +  "music artists or bands:";
 
         Map<String, Object> requestBody = new HashMap<>();
+        requestBody.put("model", "text-davinci-003");
         requestBody.put("prompt", prompt);
         requestBody.put("max_tokens", 45);
         requestBody.put("n", 1);
